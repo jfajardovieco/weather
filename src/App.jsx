@@ -64,7 +64,7 @@ useEffect(() => {
   }
   
 }
-console.log(imageChange())
+
 
   
   const objStyle = {
@@ -77,7 +77,11 @@ console.log(imageChange())
     <div style={objStyle}  className='app'>
       {
         isLoading
-        ?<span class="loader"></span>
+        ? (<div className='loader__div'> <span class="loader"></span> 
+        
+        <div className='loader__msn'>Permite GPS en tu disposotivo</div>
+        
+        </div>)
         :(
       <WeatherCard 
       weather={weather}

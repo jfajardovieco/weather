@@ -33,6 +33,21 @@
     transform: translate(-50%, -50%);
     animation: scaleUp 1s linear infinite;
   }
+
+  .loader__div{
+    width: 200px;
+    height: 120px;
+    display: grid;
+    grid-template-rows: 5 5;
+    background-color: #ffffff4d;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .loader__msn{
+    text-decoration: solid;
+  }
   
   @keyframes scaleUp {
     0% { transform: translate(-50%, -50%) scale(0) }
@@ -42,3 +57,7 @@
     0% , 60% , 100%{ transform:  scale(1) }
     80% { transform:  scale(1.2)}
   }
+
+  
+    
+  
