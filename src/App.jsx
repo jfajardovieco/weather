@@ -48,8 +48,7 @@ useEffect(() => {
 
   
   const infoBg = weather?.weather[0].main
-  console.log(weather)
-  console.log(infoBg)
+  
   let num = 0
   const imageChange = () =>{
   if(infoBg === 'Clear'){
@@ -70,7 +69,7 @@ console.log(imageChange())
   
   const objStyle = {
   
-    backgroundImage: `url(../img/image${num}.jpg)`
+    backgroundImage: `url(../img/image${imageChange()}.jpg)`
     
   }
 
