@@ -3,6 +3,7 @@ import './App.css'
 import axios from 'axios';
 import WeatherCard from './components/WeatherCard';
 
+
 function App() {
 
   const [coord, setCoord] = useState()
@@ -45,9 +46,36 @@ useEffect(() => {
   }
   }, [coord])
 
+  
+  const infoBg = weather?.weather[0].main
+  console.log(weather)
+  console.log(infoBg)
+  let num = 0
+  const imageChange = () =>{
+  if(infoBg === 'Clear'){
+    return  num = 1
+  }else if(infoBg === 'Rain'){
+ return   num = 2
+  }else if(infoBg === 'Thunderstorm'){
+    return  num = 3
+  } else if(infoBg === 'Drizzle'){
+    return num = 4
+  } else{
+    return  num = 5
+  }
+  
+}
+console.log(imageChange())
+
+  
+  const objStyle = {
+  
+    backgroundImage: `url(../img/image${num}.jpg)`
+    
+  }
 
   return (
-    <div className='app'>
+    <div style={objStyle}  className='app'>
       {
         isLoading
         ?<span class="loader"></span>
