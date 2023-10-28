@@ -37,7 +37,11 @@ useEffect(() => {
         setTemp({celsius, fahrenheit})
         setWeather(res.data)})
       .catch(err => console.log(err))
-      .finally(() => setIsLoading(false))
+       .finally(() => {
+        setTimeout(()=>{
+          setIsLoading(false)}, 2000)
+        
+      })
   }
   }, [coord])
 
@@ -46,7 +50,7 @@ useEffect(() => {
     <div className='app'>
       {
         isLoading
-        ?<h2 className='app_loader'>Now Loading</h2>
+        ?<span class="loader"></span>
         :(
       <WeatherCard 
       weather={weather}
